@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">ParkingApp</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="place_details">
+    <![CDATA[
+        <b>%1$s</b>
+        <br/>
+        <i>Place Id: %2$s</i>
+        <br/>
+        Address: %3$s
+        <br/>
+        Phone: %4$s
+        <br/>
+        Website: %5$s
+    ]]>
+    </string>
+</resources>
