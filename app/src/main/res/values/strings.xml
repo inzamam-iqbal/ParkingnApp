@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">ParkingApp</string>
-    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_maps">ParkingApp</string>
     <string name="place_details">
     <![CDATA[
         <b>%1$s</b>

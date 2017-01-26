@@ -122,6 +122,8 @@ public class MapsActivity extends FragmentActivity implements
         CameraUpdate zoom = CameraUpdateFactory.zoomTo(12);
         mMap.moveCamera(center);
         mMap.animateCamera(zoom);
+
+        setMarkerVisibility(m1);
     }
 
 
@@ -167,6 +169,7 @@ public class MapsActivity extends FragmentActivity implements
             @Override
             public void onLocationChanged(Location location) {
                 if (m1==null) {
+                    Log.e("locationChane","t");
                     mCurrentLocation = location;
                     LatLng current = new LatLng(mCurrentLocation.getLatitude(), mCurrentLocation.getLongitude());
                     m1 = mMap.addMarker(new MarkerOptions().position(current).title("My location").draggable(true));
@@ -248,9 +251,9 @@ public class MapsActivity extends FragmentActivity implements
     private void createLocationRequest() {
         mLocationRequest = new LocationRequest();
 
-        mLocationRequest.setInterval(5000000);
+        mLocationRequest.setInterval(2*60*60*1000);
 
-        mLocationRequest.setFastestInterval(500000/2);
+        mLocationRequest.setFastestInterval(2*60*60*1000);
 
         mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
     }
@@ -308,6 +311,13 @@ public class MapsActivity extends FragmentActivity implements
         mAllMarkers.add(m8);
         mAllMarkers.add(m9);
         mAllMarkers.add(m10);
+
+        Log.e("seteed markers","t");
+
+        for (int i=0;i<mAllMarkers.size();i++){
+            mAllMarkers.get(i).setVisible(false);
+        }
+
 
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
